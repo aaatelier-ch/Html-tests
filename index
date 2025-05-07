@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle List</title>
+    <style>
+        .toggle-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .toggle-item {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        .toggle-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="toggle-list">
+    <li class="toggle-item">Item 1
+        <div class="toggle-content">
+            Content for item 1.
+        </div>
+    </li>
+    <li class="toggle-item">Item 2
+        <div class="toggle-content">
+            Content for item 2.
+        </div>
+    </li>
+    <li class="toggle-item">Item 3
+        <div class="toggle-content">
+            Content for item 3.
+        </div>
+    </li>
+</ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.toggle-item');
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                const content = item.querySelector('.toggle-content');
+                if (content.style.display === 'none' || content.style.display === '') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
 
